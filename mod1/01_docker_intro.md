@@ -13,7 +13,7 @@ In this lab you will install docker on a linux VM and begin exploring the Docker
 ## Create and run a Docker containers
 In this section we will run some docker containers. All of these commands will be run in the terminal window with the SSH connection to the lab machine.
 1. Enter the following command to pull down a docker contianer from the docker registry and run it. <br/>
-`docker run hello-world`<br/>
+`docker run hello-world<br/>
 This command just pulled an image from the docker registry, created a container with that image, ran it, and exited
 1. When running applications like web applications or databases we generally want to let them run, and we often want to let them run in the background. Enter the following command in the terminal to start an NGINX container.<br/>
 `docker run -d nginx:alpine`
@@ -24,14 +24,12 @@ To view a list of the running and stopped containers run the followig command.<b
 1. Now lets clean those containers up with the following commands. We can remove contianers with the `docker rm` command and either the first few characters in the __CONTAINER ID__ or the __CONTAINER NAME__.<br/>
 ![](./img/ps-output-id-name.png)<br/>
 If a container is running like the nginx one, we will also need to use the `-f` flag with the `docker rm command`, or the `docker stop command to first stop it`. Now using the `docker rm` command remove the running containers<br/>
-`docker rm {ID|NAME}`
-<br/>
+`docker rm {ID|NAME}`<br/>
 Ensure all of the containers are cleaned up by using the `docker ps -a` command before moving to the next step
 1. Let's create a new NGINX web server container, only we will create it a bit differently. Run the following command to create a new NGINX container. <br/>
-`docker run --name mywebapp -d --restart always -p 8080:80 nginx:1.13-alpine`
-<br/>
+`docker run --name mywebapp -d --restart always -p 8080:80 nginx:1.13-alpine`<br/>
 __Note:__ This will create a docker container with a specific name in the background, and expose port 80 of the container to port 8080 on the host. If the application crashes docker will always restart the container. The previous time we started an NGINX container we were unable to connect to it from the host system.
-1. Run the following command to connect to the web application, and view the ouptut. <br/>
+1. Run the following command to connect to the web application, and view the ouptut.<br/>
 `curl localhost:8080`
 1. The container is running in the background, but we can run applications inside the scope of this container namespace using the `docker exec` command. Enter the comman `docker exec mywebapp ls` to run the `ls` command in the `mywebapp` container. You should see a directory listing from the container.
 1. The `-it` flags can be used with the `docker run` and the `docker exec` commands to connect to a container with terminal access.  Run the following command to start a sh process in the running container namespace and connet the terminal. <br/>
