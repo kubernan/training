@@ -7,8 +7,8 @@ In this lab you will install docker on a linux VM and begin exploring the Docker
 1. Run the following command to begin installing docker <br/> `sh get-docker.sh`
 1. After docker is installed you will need to use `sudo` when executing command. Enter the following to reconfigure permissions in order to avoid that. <br/>`sudo usermod -aG docker labuser`
 1. Close the SSH connection and reconnet.
-1. Run the following command to get Docker version information.
-1. Run the following command to get detailed information about the Docker installatio `docker info`
+1. Run the following command to get Docker version information. <br/> 'docker version'
+1. Run the following command to get detailed information about the Docker installation. <br/> `docker info`
 
 ## Create and run a Docker containers
 In this section we will run some docker containers. All of these commands will be run in the terminal window with the SSH connection to the lab machine.
