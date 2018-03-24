@@ -13,7 +13,7 @@ In this lab you will install docker on a linux VM and begin exploring the Docker
 ## Create and run a Docker containers
 In this section we will run some docker containers. All of these commands will be run in the terminal window with the SSH connection to the lab machine.
 1. Enter the following command to pull down a docker contianer from the docker registry and run it. <br/>
-`docker run hello-world<br/>
+`docker run hello-world`<br/>
 This command just pulled an image from the docker registry, created a container with that image, ran it, and exited
 1. When running applications like web applications or databases we generally want to let them run, and we often want to let them run in the background. Enter the following command in the terminal to start an NGINX container.<br/>
 `docker run -d nginx:alpine`
